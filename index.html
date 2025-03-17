@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Vendas e Comércio</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #36373a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #1671a5;
+            overflow: hidden;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+       
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .product-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            height: 350px; /* Altura ligeiramente reduzida */
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+            max-height: 220px;
+            object-fit: cover;
+        }
+        .product-card h3 {
+            margin: 20px 0 10px;
+            font-size: 1.3em;
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1671a5;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EletroShop</h1>
+</header>
+
+<nav>
+    <a href="#home">Categorias</a>
+    <a href="#promotions">Promoções</a>
+</nav>
+
+<div class="container">
+    <div class="products">
+        <div class="product-card">
+            <img src="data:image/jpeg;base64,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" alt="Produto 1">
+            <h3>Geladeira electrolux</h3>
+            <h4>R$3.199,00
+            <div>
+                <p>
+                Marca	Brastemp
+                Capacidade	375 Litros,
+                 com duas portas.
+                
+            </p>
+        </h4>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSriVH8oyYJMUK-CqmVToHPT2_NXfdNWsqYlQ&s" alt="Produto 2">
+            <h3>Liquidificador </h3>
+            <h4>R$229,00
+                <div>
+                    <p>
+                        Modelo: 0578
+                        Voltagem: 127V ou 220V
+                    </p>
+            </h4>
+        </div>
+        <div class="product-card">
+            <img src="https://polarequipamentos.vtexassets.com/arquivos/ids/158150/WP6000C-2.jpg?v=638744454546800000" alt="Produto 3">
+            <h3>Bebedouro </h3>
+            <h4>
+                R$1500,00
+                <div>
+                    <p>
+                        Mineralli
+                        Voltagem: 220V
+                    </p>
+            </h4>
+        </div>        <div class="product-card">
+            <img src="https://ae01.alicdn.com/kf/HTB1C_rYOcfpK1RjSZFOq6y6nFXaD.jpg_640x640Q90.jpg_.webp" alt="Produto 4">
+            <h3>Televisão</h3>
+            <h4>
+                R$120.000,00
+                <div>
+                    <p>
+                        Polegadas: 50,
+                        Wi-Fi Bluetooth
+                    </p>
+            </h4>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSlwFF4QdqDzxv8AQKfy9SYRIl9m4kgDOqzMzve6QM36Ius4ylaK2VnY1IHopfuwf6ZusXYiiBl7G_Mx_cyPhZJxd6O3TSjMs3NEk1MWXU7M2WhXacd2N00&usqp=CAE" alt="Produto 5">
+            <h3>Forno</h3>
+            <h4>
+                R$1.566,55
+                <div>
+                    <p>
+                        80L EFFICIENT COM PERFECTCOOK360 (OE8EH)
+                    </p>
+            </h4>
+        </div>
+        <div class="product-card">
+            
+            <img src="https://hiperfer.cdn.magazord.com.br/img/2019/11/produto/4683/ventilador-parede.jpg?ims=500x500" alt="Produto 6">
+            <h3>Ventilador</h3>
+            <h4>
+                R$138,61
+                <div>
+                    <p>
+                        Voltagem: 220V
+                        Super Power
+                    </p>
+            </h4>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Nossa Loja - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
